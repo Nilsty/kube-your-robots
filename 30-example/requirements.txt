@@ -1,4 +1,4 @@
-robotframework==7.0
-robotframework-browser==18.0.0
+robotframework==6.1
+robotframework-browser==16.2.0
 robotframework-kubelibrary==0.8.7
-robotframework-requests==0.9.6
+robotframework-requests==0.9.5
