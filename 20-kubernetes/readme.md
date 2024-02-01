@@ -92,8 +92,8 @@ volume under spec:
         configMap:
           name: index-html
           items:
-              - key: index.html
-                path: index.html
+          - key: index-html-file-content
+            path: index.html
 ```
 
 volumeMount under containers
