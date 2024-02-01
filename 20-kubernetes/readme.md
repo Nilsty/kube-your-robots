@@ -106,5 +106,5 @@ volumeMount under containers
 Apply the changes back to the cluster
 - `kubectl replace -f nginx-deployment.yaml`
 
-Check you pod definition containing your changes
+Check your pod definition containing your changes
 - `kubectl get pods -n $MY_NAMESPACE -o yaml`
