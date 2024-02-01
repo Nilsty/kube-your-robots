@@ -1,0 +1,36 @@
+# This is an example how install a newer Python version at the original Browser base image
+# The example scenario is creating a base image with test cases inside. Test cases shall be executed as soon as the container starts.
+
+FROM ghcr.io/marketsquare/robotframework-browser/rfbrowser-stable:18.0
+
+WORKDIR /robot
+
+# copy test cases in to this image
+COPY . .
+
+# The base image follows best practices by running the image not as root user, but as pwuser. But for some stuff we need to be root, thus we have to switch the user profile during build of this image.
+USER root
+
+# Install Python 3.11
+RUN apt-get update && apt-get install -y software-properties-common \
+    && add-apt-repository -y ppa:deadsnakes/ppa \
+    && apt-get update \
+    && apt-get install -y python3.11 python3.11-distutils \
+    && curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11 \
+    && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
+
+# pwuser must own the WORKDIR /robot, otherwise it must not create directory (i.e. the /logs folder) 
+RUN chown -R pwuser:pwuser /robot
+
+# Change back to pwuser like the original 
+USER pwuser
+# Create logs folder
+RUN mkdir logs
+# Given that this repository has a requirements file, install it 
+RUN pip3 install --user -r requirements.txt
+# Now re-initialize Browser library
+RUN python3 -m Browser.entry init
+
+# When container starts, this command will be executed for running the test cases
+ENTRYPOINT ["robot", "-d", "logs", "-b", "console.log", "--nostatusrc" "."]
+
