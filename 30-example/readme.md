@@ -17,6 +17,7 @@ To run this test locally you will need to install
 - Initialize the Browser Library via `rfbrowser init`
 
 And you'll need to be connected to the Kubernetes cluster running the Grafana instance.
+`gcloud container clusters get-credentials k8s-workshop-cluster --region europe-north1 --project robocon2024-workshop` This command will set your kube config.
 
 Execute the tests via `robot example-grafana-login.robot`
 

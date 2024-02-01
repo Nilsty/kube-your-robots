@@ -13,11 +13,11 @@ About YAML syntax:
 ## Let's get started
 ### Kubeconfig and cluster connection
 - What is my current kubectl context?
-  - `kubectl config view --minify --flatten --context=$(kubectl config current-context)`
-  [Mastering the kubeconfig file](https://ahmet.im/blog/mastering-kubeconfig/)
+  - `kubectl config view --minify --flatten --context=$(kubectl config current-context)` or in short `kubectl config view | grep "current"`
+  [Mastering the kube config file](https://ahmet.im/blog/mastering-kubeconfig/)
 
 - Connect to our workshop k8s cluster
-  - `gcloud container clusters get-credentials <cluster-name> --zone <zone> --project <project>`
+  - `gcloud container clusters get-credentials k8s-workshop-cluster --region europe-north1 --project robocon2024-workshop`
 
 ### Create an app
 - Create your namespace
@@ -27,6 +27,11 @@ About YAML syntax:
 
 - Deploy an nginx container with one kubectl command
   - `kubectl create deployment nginx --image=nginx -n $MY_NAMESPACE`
+
+- Have a look at the created deployment object in the cluster
+  - `kubectl get deploy -n $MY_NAMESPACE`
+  - `kubectl get deploy -n $MY_NAMESPACE -o wide` for more context
+  - `kubectl get deploy -n $MY_NAMESPACE -o yaml` for full context
 
 - Check the status of your pods
   - `kubectl get pods -n $MY_NAMESPACE`
