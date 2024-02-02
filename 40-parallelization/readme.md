@@ -21,6 +21,6 @@ It would be better to split the tests into several container to let the resource
 
 ## Current development on this topic
 There are currently to projects in development to provide solutions for better scaling of tests across multiple containers.
-- [Probot](https://github.com/mwfoekens/Probot). [Merel, the creator of this project will also be giving a talk at RoboCon online](https://robocon.io/#online-probot-test-parallelization--distribution-with-docker-and-kubernetes). 
+- [Probot](https://github.com/mwfoekens/Probot). [Merel, the creator of this project, will be presenting at RoboCon online](https://robocon.io/#online-probot-test-parallelization--distribution-with-docker-and-kubernetes). 
 - [RobotFramework-Cluster](https://github.com/MarketSquare/robotframework-cluster), which is currently still in conception and is planned to be a successor of Pabot.
 
