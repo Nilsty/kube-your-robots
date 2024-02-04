@@ -11,12 +11,12 @@
 
 ## Let's get started
 ### Kubeconfig and cluster connection
+- Connect to our workshop k8s cluster
+  - `gcloud container clusters get-credentials k8s-workshop-cluster --region europe-north1 --project robocon2024-workshop`
+
 - What is my current kubectl context?
   - `kubectl config view --minify --flatten --context=$(kubectl config current-context)` or in short `kubectl config view | grep "current"`
   [A guide for mastering the kube config file](https://ahmet.im/blog/mastering-kubeconfig/)
-
-- Connect to our workshop k8s cluster
-  - `gcloud container clusters get-credentials k8s-workshop-cluster --region europe-north1 --project robocon2024-workshop`
 
 ### Create an app
 - Create your namespace
