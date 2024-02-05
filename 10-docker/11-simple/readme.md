@@ -25,7 +25,7 @@ RUN pip3 install --user -r requirements.txt
 ENTRYPOINT [ "python","-m","RobotFrameworkService.main","-p","8080","-t","." ]
 ```
 
-Afer building this image with `docker build` you can run it by:
+After building this image with `docker build` you can run it by:
 
 ```
 docker run --rm --publish 8080:8080 \
