@@ -20,4 +20,4 @@ Finally we will talk about [running tests in parallel on top of Kubernetes](40-p
 - A Terminal UI tool wrapping `kubectl` [k9s](https://k9scli.io/)
 - Security in Kubernetes - The OWASP [Kubernetes Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Kubernetes_Security_Cheat_Sheet.html)
 - If you ever need to investigate Kubernetes Networking - [Kubeshark: The Wireshark For Kubernetes](https://dev.to/thenjdevopsguy/kubeshark-the-wireshark-for-kubernetes-3a72)
-
+- Securing public webservers with an [OAUTH2 proxy](https://oauth2-proxy.github.io/oauth2-proxy/)
