@@ -29,5 +29,5 @@ A few teeaks shall be mentioned:
 Once a container is started, you sometimes may want to access the actual container. For instance to analyse what tools are installed what files are actually stored in the image. You can access the command line of a container by running:
 
 ```
-docker exect -it <container id> bash
+docker exec -it <container id> bash
 ```
