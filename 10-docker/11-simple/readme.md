@@ -30,7 +30,7 @@ After building this image with `docker build` you can run it by:
 ```
 docker run --rm --publish 8080:8080 \
            <your image name>
-``
+```
 
 When running this image as container, the *entrypoint* will start the webservice listening on port 8080. (because `-p 8080:8080` mapped your machine's port 8080 to the container port 8080). On that port you can trigger the test cases wrappend in the container on demand. You can view all endpoints of the webservice on localhost:8080/docs
 
