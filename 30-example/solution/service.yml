@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  labels:
+    app.kubernetes.io/instance: robot-test
+    app.kubernetes.io/name: robot-test
+  name: robot-test-svc
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: my-port
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app.kubernetes.io/instance: robot-test
+    app.kubernetes.io/name: robot-test
+  sessionAffinity: None
+  type: ClusterIP
+
