@@ -64,7 +64,7 @@
 
 ### Deleting the pod
 - This will remove your changes as the pod will be re-created from the deployment definition
-  - `kubectl delete pod $POD -n $MY_NAMESPACE`
+  - `kubectl delete $POD -n $MY_NAMESPACE`
   
 ## A permanent way to customization
 Inject the index.html via a configmap into the pod
